@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import './category.scss';
 import ProductCard from '../../components/product-card/Product-Card';
-import { CategoriesContext } from '../../components/contexts/categories.context';
+import { CategoriesContext } from '../../contexts/categories.context';
 
 const Category = () => {
   const { category } = useParams();

@@ -2,21 +2,26 @@ import './navigation.scss'
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg"
 
 import { Link, Outlet, useLocation } from "react-router-dom"
-import { UserContext } from "../../contexts/user.context"
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import { signOutUser } from '../../utils/firebase/firebase'
 import CartIcon from "../../components/cart-icon/Cart-Icon"
 import CartDropdown from "../../components/cart-dropdown/Cart-Dropdown"
-import { CartContext } from "../../contexts/cart.context"
+import { useDispatch, useSelector } from 'react-redux'
+import { setIsCartOpen } from '../../store/cart/cart.action'
+import { selectIsCartOpen } from '../../store/cart/cart.selector'
+import { selectCurrentUser } from '../../store/user/user.selector'
 
 
 const Navigation = () => {
     const location = useLocation();
-    const { currentUser } = useContext(UserContext);
-    const { isCartOpen,setIsCartOpen  } = useContext(CartContext);
+    const dispatch = useDispatch();
+  const currentUser = useSelector(selectCurrentUser);
+  console.log('currentUser:', currentUser);
+  
+  const isCartOpen = useSelector(selectIsCartOpen);
 
     useEffect(() => {
-        setIsCartOpen(false);
+        dispatch(setIsCartOpen(false));
     }, [location.pathname]);
 
 

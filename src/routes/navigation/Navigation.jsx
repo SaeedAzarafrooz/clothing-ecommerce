@@ -20,6 +20,9 @@ const Navigation = () => {
   
   const isCartOpen = useSelector(selectIsCartOpen);
   const isProfileOpen = useSelector(selectIsProfileOpen);
+    const currentUser = useSelector(selectCurrentUser);
+console.log('currentUser:', currentUser);
+
 
     useEffect(() => {
         dispatch(setIsCartOpen(false));
@@ -43,7 +46,7 @@ const Navigation = () => {
                     <CartIcon />
                 </div>
                 {isCartOpen && <CartDropdown />}
-                {isProfileOpen && <ProfileDropdown />}
+                {isProfileOpen && <ProfileDropdown currentUser={currentUser} />}
             </div>
             <Outlet />
         </>

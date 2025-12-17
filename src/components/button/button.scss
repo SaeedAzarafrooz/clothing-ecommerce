@@ -44,4 +44,15 @@
       border: none;
     }
   }
+    &.danger {
+    background-color: white;
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+
+    &:hover {
+      background-color: rgb(255, 0, 0);
+      color: white;
+      border: none;
+    }
+  }
 }

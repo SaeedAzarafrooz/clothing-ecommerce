@@ -5,8 +5,8 @@ import { selectCartItems, selectCartTotal } from '../../store/cart/cart.selector
 
 
 const Checkout = () => {
- const cartItems = useSelector(selectCartItems);
-  const cartTotal = useSelector(selectCartTotal);
+    const cartItems = useSelector(selectCartItems);
+    const cartTotal = useSelector(selectCartTotal);
 
 
     return (
@@ -29,7 +29,8 @@ const Checkout = () => {
                 </div>
             </div>
 
-            {cartItems.map((item) => (<CheckoutItem cartItem={item} />))}
+            {cartItems.map((cartItem) => (
+                <CheckoutItem key={cartItem.id} cartItem={cartItem} />))}
             <span className='total'>Total: ${cartTotal}</span>
         </div>
     )

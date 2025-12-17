@@ -1,0 +1,26 @@
+.profile-icon-container {
+  width: 65px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+&:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10%;
+    transition: all 0.3s ease;
+  }
+
+  .profile-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .arrowdown-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+
+}

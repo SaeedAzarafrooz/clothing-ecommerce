@@ -9,16 +9,17 @@ import CartDropdown from "../../components/cart-dropdown/Cart-Dropdown"
 import { useDispatch, useSelector } from 'react-redux'
 import { setIsCartOpen } from '../../store/cart/cart.action'
 import { selectIsCartOpen } from '../../store/cart/cart.selector'
-import { selectCurrentUser } from '../../store/user/user.selector'
+import { selectCurrentUser, selectIsProfileOpen } from '../../store/user/user.selector'
+import ProfileIcon from '../../components/profile-icon/Profile-Icon'
+import ProfileDropdown from '../../components/profile-dropdown/Profile-Dropdown'
 
 
 const Navigation = () => {
     const location = useLocation();
     const dispatch = useDispatch();
-  const currentUser = useSelector(selectCurrentUser);
-  console.log('currentUser:', currentUser);
   
   const isCartOpen = useSelector(selectIsCartOpen);
+  const isProfileOpen = useSelector(selectIsProfileOpen);
 
     useEffect(() => {
         dispatch(setIsCartOpen(false));
@@ -26,10 +27,6 @@ const Navigation = () => {
 
 
 
-    const signOutHandler = async () => {
-        await signOutUser();
-        // setCurrentUser(null)
-    }
 
     return (
         <>
@@ -40,16 +37,13 @@ const Navigation = () => {
                 <div className="nav-links-container">
 
                     <Link className="nav-link" to="/shop">SHOP</Link>
-                    {
-                        currentUser ? (
-                            <span className="nav-link" onClick={signOutHandler}>SIGN OUT</span>
-                        ) : (
-                            <Link className="nav-link" to="/auth">SIGN IN</Link>
-                        )
-                    }
+                    
+                    <ProfileIcon/>
+              
                     <CartIcon />
                 </div>
                 {isCartOpen && <CartDropdown />}
+                {isProfileOpen && <ProfileDropdown />}
             </div>
             <Outlet />
         </>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="matrix(14.752895, 0, 0, 14.752895, 256.170868, 250.864075)" style=""/>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" transform="matrix(14.752895, 0, 0, 14.752895, 256.170868, 250.864075)" style=""/>
+  <path style="fill: rgb(239, 194, 123); visibility: hidden;" d="M 178.302 189.197 C 178.302 231.846 213.572 266.542 256.912 266.542 C 300.262 266.542 335.532 231.846 335.532 189.197 C 335.532 146.548 300.262 111.852 256.912 111.852 C 213.572 111.852 178.302 146.548 178.302 189.197 Z"/>
+  <g id="SVGRepo_iconCarrier" transform="matrix(14.752895, 0, 0, 14.752895, 123.394806, 103.335121)" style="">
+    <g id="user-5" transform="translate(-3 -2)">
+      <path id="secondary" d="M9,13a5,5,0,0,0-5,5H4v1s2,2,8,2,8-2,8-2V18h0a5,5,0,0,0-5-5Z" style="paint-order: fill; fill: rgb(82, 134, 250); visibility: hidden;"/>
+      <path id="primary" d="M15,13a5,5,0,0,1,5,5h0v1s-2,2-8,2-8-2-8-2V18H4a5,5,0,0,1,5-5ZM12,3a5,5,0,1,0,5,5A5,5,0,0,0,12,3Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="fill: none; stroke: rgb(87, 88, 88);"/>
+    </g>
+  </g>
+</svg>

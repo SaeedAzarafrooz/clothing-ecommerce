@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("./assets/fonts/ScienceGothic_Condensed-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("./assets/fonts/ScienceGothic_Condensed-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ScienceGothic";
+  src: url("./assets/fonts/ScienceGothic_Condensed-Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@tailwind utilities;
+@layer utilities {
+  .font-SG {
+    font-family: "ScienceGothic", sans-serif;
+  }
+
+    .font-SG-light {
+    font-family: "ScienceGothic", sans-serif;
+    font-weight: 200;
+  }
+
+  .font-SG-bold {
+    font-family: "ScienceGothic", sans-serif;
+    font-weight: 800;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  padding: 20px 40px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}

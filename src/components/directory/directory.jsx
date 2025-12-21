@@ -1,11 +1,11 @@
+// import './directory.scss';
 import DirectoryItem from '../directory-item/Directory-Item';
-import './directory.scss';
 
 
 
 const Directory = ({ categories }) => {
   return (
-    <div className="directory-container">
+    <div className="w-full flex flex-wrap justify-between gap-2">
       {categories.map((category) => (
         <DirectoryItem key={category.id} category={category} />
       ))}

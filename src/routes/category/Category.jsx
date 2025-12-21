@@ -1,12 +1,11 @@
+// import './category.scss';
 import { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 
-
-
-import './category.scss';
 import ProductCard from '../../components/product-card/Product-Card';
 import { useSelector } from 'react-redux';
 import { selectCategoriesMap } from '../../store/categories/category.selector';
+
 
 const Category = () => {
   const { category } = useParams();
@@ -19,8 +18,8 @@ const Category = () => {
 
   return (
     <Fragment>
-      <h2 className='category-title'>{category.toUpperCase()}</h2>
-      <div className='category-container'>
+      <h2 className='text-4xl mb-6 text-center'>{category.toUpperCase()}</h2>
+      <div className='grid grid-cols-4 gap-x-5 gap-y-12'>
         {products &&
           products.map((product) => (
             <ProductCard key={product.id} product={product} />

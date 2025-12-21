@@ -1,4 +1,4 @@
-import './product-card.scss'
+// import './product-card.scss'
 import Button from '../button/Button'
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
 
   return (
- <div className="group relative flex h-[350px] w-full flex-col items-center gap-1 overflow-hidden">
+    <div className="group relative flex h-[350px] w-full flex-col items-center gap-1 overflow-hidden">
       {/* image */}
       <img
         src={imageUrl}
@@ -31,18 +31,9 @@ const ProductCard = ({ product }) => {
       <Button
         buttonType="inverted"
         onClick={addProductToCart}
-        className=" 
-          absolute
-          bottom-[140px]  
-          w-[80%]
-          min-h-[50px]
-          opacity-0
-          hidden
-          group-hover:flex
-          group-hover:opacity-85
-          transition-all
-          duration-300 
-        "
+        className="absolute bottom-[40px] w-[80%] min-h-[50px] 
+                   opacity-0 hidden group-hover:flex
+                   group-hover:opacity-85 transition-all duration-300 "
       >
         Add to cart
       </Button>

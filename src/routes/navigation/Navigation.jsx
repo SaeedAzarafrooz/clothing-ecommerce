@@ -1,4 +1,4 @@
-import './navigation.scss'
+// import './navigation.scss'
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg"
 
 import { Link, Outlet, useLocation } from "react-router-dom"

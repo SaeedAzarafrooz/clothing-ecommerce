@@ -16,7 +16,8 @@ const FormInput = ({ label, ...otherProps }) => {
                     className={`
             absolute left-1.5 top-2.5 transition-all duration-300 pointer-events-none text-gray-500 text-base
             peer-focus:-top-5 peer-focus:text-sm peer-focus:text-black
-            ${otherProps.value && String(otherProps.value).length ? '-top-4 text-sm text-black ' : ''}`}>
+            ${console.log('otherProps:',otherProps) }
+            ${otherProps.value && String(otherProps.value).length ? '-top-5 text-sm text-black ' : ''}`}>
                     {label}
                 </label>
             )}

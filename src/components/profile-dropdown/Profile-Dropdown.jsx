@@ -6,31 +6,26 @@ import { setIsProfileOpen } from '../../store/user/user.action';
 import Button from '../button/Button';
 import { signOutUser } from '../../utils/firebase/firebase';
 
-const ProfileDropdown = ({ currentUser }) => {
+const ProfileDropdown = ({ currentUser ,iconRef}) => {
   const dispatch = useDispatch();
   const profiledropdownRef = useRef(null);
 
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      const dropdownEl = profiledropdownRef.current;
-      const profileIconEl = document.querySelector('.profile-icon-container');
-
-      // اگر کلیک داخل دراپ‌دان بود یا روی آیکون سبد بود، کاری نکن
+const handleClickOutside = (event) => {
       if (
-        (dropdownEl && dropdownEl.contains(event.target)) ||
-        (profileIconEl && profileIconEl.contains(event.target))
+        profiledropdownRef.current?.contains(event.target) ||
+        iconRef.current?.contains(event.target)
       ) {
         return;
       }
 
-      // در غیر اینصورت دراپ‌دان را ببند
       dispatch(setIsProfileOpen(false));
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [setIsProfileOpen]);
+  }, [dispatch]);
 
 
   const name =

@@ -7,32 +7,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector';
 import { setIsCartOpen } from '../../store/cart/cart.action';
 
-const CartDropdown = () => {
+const CartDropdown = ({ iconRef }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      const dropdownEl = dropdownRef.current;
-      const cartIconEl = document.querySelector('.cart-icon-container');
-
-      // اگر کلیک داخل دراپ‌دان بود یا روی آیکون سبد بود، کاری نکن
+const handleClickOutside = (event) => {
       if (
-        (dropdownEl && dropdownEl.contains(event.target)) ||
-        (cartIconEl && cartIconEl.contains(event.target))
+        dropdownRef.current?.contains(event.target) ||
+        iconRef.current?.contains(event.target)
       ) {
         return;
       }
 
-      // در غیر اینصورت دراپ‌دان را ببند
       dispatch(setIsCartOpen(false));
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [setIsCartOpen]);
+  }, [dispatch]);
 
 
   const goToCheckoutHandler = () => {

@@ -27,6 +27,11 @@ const BUTTON_VARIANTS = {
     'bg-white text-black border border-slate-300 ' +
     'hover:bg-black hover:text-white hover:border-transparent',
 
+addToCart:
+    'bg-yellow-600 text-black border h-[37px] pr-24' +
+    ' hover:text-white ',
+
+
   invertedSignIn:
     ' text-black border border-slate-300 px-[15px] ' +
     'hover:bg-slate-300 hover:text-black hover:border-transparent',
@@ -45,19 +50,19 @@ const Button = ({ children, hasIcon, buttonType = 'default',className = '', ...o
       {...otherProps}
     >
       {hasIcon && 
-  ( <span className="flex w-7 h-7">
+  ( <span className="group relative w-7 h-7 flex-shrink-0">
 
   
         <img
           src={loginIcon}
           alt="shop"
-          className=" block group-hover:hidden"
+          className="absolute inset-0 w-7 h-7 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-in-out pointer-events-none"
         />
 
         <img
           src={loginIconHover}
           alt="shop-hover"
-          className="  hidden group-hover:block"
+          className="absolute inset-0 w-7 h-7 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none"
         />
     
       </span>)  

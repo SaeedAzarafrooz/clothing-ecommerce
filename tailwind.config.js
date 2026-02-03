@@ -4,7 +4,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        softBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(2px)' },
+        },
+      },
+      animation: {
+        softBounce: 'softBounce 0.8s ease-in-out infinite',
+      },
+    },
   },
   plugins: [],
 }

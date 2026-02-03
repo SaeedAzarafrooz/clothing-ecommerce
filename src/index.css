@@ -1,6 +1,26 @@
 @tailwind base;
 @tailwind components;
 
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px 40px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
 @font-face {
   font-family: "ScienceGothic";
   src: url("./assets/fonts/ScienceGothic_Condensed-Medium.ttf") format("truetype");
@@ -42,21 +62,47 @@
 }
 
 
+@keyframes slideLeftFade {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
 
-body {
-  margin: 0;
-  padding: 20px 40px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.slide-left-fade {
+  animation: slideLeftFade 700ms ease-in-out forwards;
+}
+
+@layer utilities {
+  @keyframes progressSmooth {
+    from {
+      transform: scaleX(0) translateZ(0);
+      /* opacity: .9; */
+    }
+    to {
+      transform: scaleX(1) translateZ(0);
+      /* opacity: 1; */
+    }
+  }
+
+  .animate-\[progressSmooth_var\(--t\)_forwards\] {
+    will-change: transform, opacity;
+    animation-timing-function: cubic-bezier(.25, .1, .25, 1); 
+  }
 }
 
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome,Safari and Edge */
+  }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-* {
-  box-sizing: border-box;
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
